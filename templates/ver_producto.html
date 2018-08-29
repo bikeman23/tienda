@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+	Ver productos
+{% endblock titulo %}
+
+{% block contenido %}
+	<h2>Ver detalle de producto</h2>
+	<!--{{obj}} -->
+	<p>nombre: {{obj.nombre}}</p>
+	<p>precio:{{obj.precio}}</p>
+	<p>foto: <img src="/media/{{obj.foto}}" width="60px"></p>
+	<p>marca:{{obj.precio}}</p>
+	categorias:
+	<p>{% for c in obj.categoria.all%}
+
+		{{c}}
+	{%endfor%}
+	</p>
+	<a href="{% url lista_productos %}">Regresar a la lista de productos</a>
+{% endblock contenido %}
